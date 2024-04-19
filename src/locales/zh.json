@@ -1,0 +1,33 @@
+{
+  "enneagram": {
+    "labels": [
+      "完美型",
+      "给予型",
+      "实干型",
+      "浪漫型",
+      "观察型",
+      "怀疑型",
+      "享乐型",
+      "领导型",
+      "调停型"
+    ]
+  },
+  "form": {
+    "title": "九型人格测试",
+    "description": "输入用户名以和其他用户对比",
+    "submit": "提交",
+    "reset": "重置",
+    "username": {
+      "label": "用户名",
+      "placeholder": "请输入用户名"
+    },
+    "waning": "未登录"
+  },
+  "login": "登录",
+  "title": "九型人格测试",
+  "description": "你的感觉胜于一切",
+  "timeout": "请在15分钟内完成",
+  "helper": {
+    "title": "九型人格类型分析"
+  }
+}
