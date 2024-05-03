@@ -5,7 +5,7 @@ import Toolbox from '@/layout/components/toolbox/index.vue'
 </script>
 
 <template>
-  <Card class="max-w-[30rem] min-w-[20rem] text-center mx-auto mt-20 relative">
+  <Card class="w-[25rem] text-center mx-auto mt-20 relative">
     <RouterView />
 
     <Toolbox />

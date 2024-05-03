@@ -278,7 +278,7 @@ const typeItems: TypeItem[] = [
           </ScrollArea>
         </CarouselItem>
         <CarouselItem>
-          <Button>2</Button>
+          <img src="@/assets/images/Enneagram_symbo.png" class="h-[18rem] mx-auto" />
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious />
