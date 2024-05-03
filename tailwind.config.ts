@@ -1,6 +1,7 @@
+import type { Config } from 'tailwindcss'
+
 const animate = import('tailwindcss-animate')
 
-/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
   safelist: ['dark'],
@@ -90,4 +91,4 @@ export default {
     }
   },
   plugins: [animate]
-}
+} safelist Config
