@@ -1,6 +1,5 @@
 import { createI18n } from 'vue-i18n'
-import type { App, WritableComputedRef } from 'vue'
-import { isObject } from '@vueuse/core'
+import type { App } from 'vue'
 
 export const i18n = createI18n({
   legacy: false,
