@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Card } from '@/components/ui/card'
 import { Icon } from '@iconify/vue'
-import Toolbox from '@/layout/components/toolbox/index.vue'
+import Toolbox from './components/toolbox/index.vue'
 </script>
 
 <template>

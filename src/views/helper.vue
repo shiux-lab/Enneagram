@@ -1,20 +1,4 @@
 <script setup lang="ts">
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel'
-import { Button } from '@/components/ui/button'
 import { transformI18n } from '@/plugins/i18n'
 
 interface TypeItem {
@@ -253,6 +237,9 @@ const typeItems: TypeItem[] = [
     ]
   }
 ]
+
+console.log(useRouter().currentRoute.value.meta)
+
 </script>
 
 <template>
@@ -288,3 +275,9 @@ const typeItems: TypeItem[] = [
 </template>
 
 <style scoped></style>
+
+<route lang="yaml">
+name: helper
+mete:
+  title: helper.title
+</route>

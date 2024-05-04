@@ -1,13 +1,12 @@
 import { createI18n } from 'vue-i18n'
 import type { App } from 'vue'
 
+import messages from '@intlify/unplugin-vue-i18n/messages'
+
 export const i18n = createI18n({
   legacy: false,
   locale: 'zh',
-  messages: {
-    zh: await import('@/locales/zh.json'),
-    en: await import('@/locales/en.json')
-  }
+  messages: messages
 })
 
 /**
@@ -16,6 +15,9 @@ export const i18n = createI18n({
  * @returns 转化后的message
  */
 export function transformI18n(message: any = '') {
+  if (typeof message !== 'string') {
+    return message
+  }
   return i18n.global.t(message)
 }
 

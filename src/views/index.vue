@@ -1,28 +1,9 @@
 <script lang="ts" setup>
-import { ref, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle
-} from '@/components/ui/dialog'
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle
-} from '@/components/ui/drawer'
-import LoginForm from '@/components/LoginForm.vue'
-import QuestionSelect from '@/components/QuestionSelect.vue'
 import type { EnneagramData, Question } from '@/types/global'
 import { useUserStore } from '@/stores/user'
-import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import questions from '@/dataset/questions.json'
-import EnneagramChart from '@/components/EnneagramChart.vue'
 import { transformI18n } from '@/plugins/i18n'
 
 const userStore = useUserStore()
@@ -50,6 +31,8 @@ const question = ref<Question[]>(questions[0])
 
 // 问题计数
 const selectedCount = ref<number>(1)
+
+console.log(useRoute())
 
 // 问题计数
 const handleSelected = (value: number) => {
@@ -109,3 +92,9 @@ const handleSelected = (value: number) => {
 </template>
 
 <style scoped></style>
+
+<route lang="yaml">
+name: home
+mete:
+  title: title
+</route>

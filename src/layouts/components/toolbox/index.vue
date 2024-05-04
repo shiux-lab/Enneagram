@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import Toolbox from '@/components/Toolbox.vue'
-import LoginTool from '@/layout/components/toolbox/components/LoginTool.vue'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
@@ -23,7 +21,20 @@ const switchLocale = () => {
 </script>
 
 <template>
-  <LoginTool />
+  <Popover>
+    <PopoverTrigger as-child>
+      <Toolbox y="top-10" icon="streamline:login-1-solid" />
+    </PopoverTrigger>
+    <PopoverContent class="w-80">
+      <div class="grid gap-4">
+        <div class="space-y-2">
+          <h4 class="font-medium leading-none">{{ $t('form.title') }}</h4>
+          <p class="text-sm text-muted-foreground">{{ $t('form.description') }}</p>
+        </div>
+        <LoginForm />
+      </div>
+    </PopoverContent>
+  </Popover>
   <Toolbox y="bottom-10" @click="switchLocale" icon="mingcute:translate-fill" />
   <Toolbox
     y="top-20"
