@@ -48,7 +48,6 @@ declare module 'vue' {
     Input: typeof import('./components/ui/input/Input.vue')['default']
     Label: typeof import('./components/ui/label/Label.vue')['default']
     LoginForm: typeof import('./components/LoginForm.vue')['default']
-    LoginTool: typeof import('./layouts/components/toolbox/LoginTool.vue')['default']
     NavigationMenu: typeof import('./components/ui/navigation-menu/NavigationMenu.vue')['default']
     NavigationMenuContent: typeof import('./components/ui/navigation-menu/NavigationMenuContent.vue')['default']
     NavigationMenuIndicator: typeof import('./components/ui/navigation-menu/NavigationMenuIndicator.vue')['default']
@@ -77,5 +76,6 @@ declare module 'vue' {
     SelectTrigger: typeof import('./components/ui/select/SelectTrigger.vue')['default']
     SelectValue: typeof import('./components/ui/select/SelectValue.vue')['default']
     Toolbox: typeof import('./components/Toolbox.vue')['default']
+    Toolboxes: typeof import('./layouts/components/Toolboxes.vue')['default']
   }
 }

@@ -5,6 +5,14 @@ import type { EnneagramData, Question } from '@/types/global'
 import { useUserStore } from '@/stores/user'
 import questions from '@/dataset/questions.json'
 import { transformI18n } from '@/plugins/i18n'
+import { getRoutes } from '@/router'
+
+definePage({
+  name: 'index',
+  meta: {
+    title: 'title'
+  }
+})
 
 const userStore = useUserStore()
 
@@ -32,8 +40,6 @@ const question = ref<Question[]>(questions[0])
 // 问题计数
 const selectedCount = ref<number>(1)
 
-console.log(useRoute())
-
 // 问题计数
 const handleSelected = (value: number) => {
   if (questions[selectedCount.value]) {
@@ -51,7 +57,9 @@ const handleSelected = (value: number) => {
 
 <template>
   <CardHeader>
-    <CardTitle>{{ transformI18n($route.meta.title) }}</CardTitle>
+    <CardTitle>{{
+      transformI18n(getRoutes().find((item) => item.path === '/')?.meta?.title)
+    }}</CardTitle>
     <CardDescription>
       <span class="text-lg text-foreground">{{ user || '' }}</span>
       {{ $t('timeout') }}
@@ -92,9 +100,3 @@ const handleSelected = (value: number) => {
 </template>
 
 <style scoped></style>
-
-<route lang="yaml">
-name: home
-mete:
-  title: title
-</route>

@@ -11,10 +11,12 @@ const router = createRouter({
 export const getRoutes = createGetRoutes(router)
 
 router.beforeEach((to, from, next) => {
+  const route = getRoutes().find(route => route.path === to.path)
+  
   //beforeEach是router的钩子函数，在进入路由前执行
-  if (to.meta && to.meta.title) {    
+  if (route?.meta && route.meta.title) {    
     //判断是否有标题
-    document.title = transformI18n(to.meta.title)
+    document.title = transformI18n(route.meta.title)
   }
 
   next()

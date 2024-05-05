@@ -52,7 +52,8 @@ export default defineConfig({
       vueTemplate: true
     }),
     Components({
-      dts: 'src/components.d.ts'
+      dts: 'src/components.d.ts',
+      dirs: ['src/components', 'src/layouts/components']
     }),
     Vue()
   ],
