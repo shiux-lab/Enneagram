@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { Card } from '@/components/ui/card'
 import { Icon } from '@iconify/vue'
 import Toolbox from './components/toolbox/index.vue'
+
+const router = useRouter()
 </script>
 
 <template>
@@ -10,15 +11,15 @@ import Toolbox from './components/toolbox/index.vue'
 
     <Toolbox />
     <div
-      @click="$router.back()"
-      v-show="$router.options.history.state.back"
+      @click="router.back()"
+      v-show="router.options.history.state.back"
       class="absolute top-2 overflow-hidden left-2 rounded-full cursor-pointer"
     >
       <Icon icon="solar:round-arrow-left-bold" class="w-6 h-6 text-foreground" />
     </div>
     <div
-      @click="$router.push('/helper')"
-      v-show="$route.name !== 'helper'"
+      @click="router.push('/helper')"
+      v-show="router.getRoutes().values.name !== 'helper'"
       class="absolute top-2 overflow-hidden right-2 rounded-full cursor-pointer"
     >
       <Icon icon="solar:danger-circle-bold" class="w-6 h-6 text-foreground" />

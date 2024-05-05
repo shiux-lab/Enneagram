@@ -1,0 +1,26 @@
+enneagram:
+  labels:
+    - Reformer
+    - Helper
+    - Achiever
+    - Individualist
+    - Investigator
+    - Loyalist
+    - Enthusiast
+    - Challenger
+    - Peacemaker
+form:
+  reset: reset
+  submit: Submit
+  title: Enneagram Test
+  description: Enter your username to compare with other users
+  username:
+    label: User
+    placeholder: Please enter your username
+  waning: Not Login
+login: Login
+title: Enneagram Test
+description: What you feel trumps everything
+timeout: Please complete within 15 minutes
+helper:
+  title: Analysis Of Enneagram Types

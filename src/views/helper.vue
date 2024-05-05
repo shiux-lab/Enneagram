@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { transformI18n } from '@/plugins/i18n'
+import { getRoutes } from '@/router';
+
+definePage({
+  name: 'helper',
+  meta: {
+    title: 'helper.title'
+  }
+})
 
 interface TypeItem {
   title: string
@@ -237,14 +245,11 @@ const typeItems: TypeItem[] = [
     ]
   }
 ]
-
-console.log(useRouter().currentRoute.value.meta)
-
 </script>
 
 <template>
   <CardHeader>
-    <CardTitle>{{ transformI18n($route.meta.title) }}</CardTitle>
+    <CardTitle>{{ transformI18n(getRoutes().find((item) => item.path === '/helper')?.meta?.title) }}</CardTitle>
   </CardHeader>
   <CardContent>
     <Carousel>
@@ -275,9 +280,3 @@ console.log(useRouter().currentRoute.value.meta)
 </template>
 
 <style scoped></style>
-
-<route lang="yaml">
-name: helper
-mete:
-  title: helper.title
-</route>

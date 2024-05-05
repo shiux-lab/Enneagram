@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
 
 import tailwind from "tailwindcss"
 import autoprefixer from "autoprefixer"
@@ -23,7 +23,7 @@ export default defineConfig({
   },
   plugins: [
     VueRouter({
-      dts: 'src/router.d.ts',
+      dts: 'src/types-router.d.ts',
       routesFolder: {
         src: 'src/views',
         exclude: ['**/components/*.vue']
@@ -32,7 +32,7 @@ export default defineConfig({
     Layouts({
       pagesDirs: "src/views",
       exclude: ["**/components/*.vue"],
-      importMode: () => 'async',
+      importMode: () => 'async'
     }),
     VueI18nPlugin({
       include: fileURLToPath(new URL('./src/locales/**', import.meta.url))
@@ -52,9 +52,9 @@ export default defineConfig({
       vueTemplate: true
     }),
     Components({
-      dts: 'src/components.d.ts',
+      dts: 'src/components.d.ts'
     }),
-    vue()
+    Vue()
   ],
   resolve: {
     alias: {
