@@ -45,32 +45,35 @@ const questionsI18n = createI18n({
 const isOpenQuestion = ref(true)
 
 // 当前问题
-const questionI18nStringStart = 'questions.'
+const questionI18nStringStart = 'questions'
 
 // 问题计数
 const selectedCount = ref<number>(0)
 
-const questionI18nString = computed(() => questionI18nStringStart + selectedCount.value)
+const questionI18nString = computed(() => questionI18nStringStart +'.'+ selectedCount.value)
 
 const question = ref<QuestionOption[]>(questionsI18n.global.tm(questionI18nString.value))
 
+// 问题总数
+const totalQuestionCount = ref<number>(questionsI18n.global.tm(questionI18nStringStart).length)
+
 // 问题计数处理
 const handleSelected = (value: number) => {
-  if (questionsI18n.global.tm(questionI18nString.value)) {
-    selectedCount.value++
-    enneagramItemPlusOne(value)
-  } else {
-    // done
+  selectedCount.value++;
+  if(selectedCount.value === totalQuestionCount.value){
     isOpenQuestion.value = false
     enneagramData.value.push({
-      name: user.value,
-      value: enneagram.value
+        name: user.value,
+        value: enneagram.value
     })
+  }else{  
+    question.value = questionsI18n.global.tm(questionI18nString.value);
+    // done
+    enneagramItemPlusOne(value)
   }
 }
 
-// 问题总数
-const totalQuestionCount = ref<number>(1)
+
 
 // 问题进度
 const progressValue = computed(() => (selectedCount.value / totalQuestionCount.value) * 100)
