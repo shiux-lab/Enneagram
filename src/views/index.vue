@@ -8,8 +8,6 @@ import questions from '@/dataset/zh/questions.json'
 import { transformI18n } from '@/plugins/i18n'
 import { getRoutes } from '@/router'
 
-import { Progress } from '@/components/ui/progress';
-
 definePage({
   name: 'index',
   meta: {
