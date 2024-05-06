@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import type { Question } from '@/types/global'
 import { Button } from '@/components/ui/button'
+import type { QuestionOption } from '@/types/datasets';
 
-defineProps<{
-  question: Question[]
+const props = defineProps<{
+  question: QuestionOption[]
   disabled?: boolean
 }>()
+
+console.log(props.question)
 </script>
 
 <template>

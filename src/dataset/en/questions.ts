@@ -1,4 +1,6 @@
-[
+import type { QuestionOption } from '@/types/datasets'
+
+const questions: QuestionOption[][] = [
   [
     {
       "name": "I am romantic and full of fantasy",
@@ -1440,3 +1442,5 @@
     }
   ]
 ]
+
+export default questions
