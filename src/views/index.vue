@@ -35,14 +35,15 @@ const isOpenQuestion = ref(true)
 const question = ref<Question[]>(questions[0])
 
 // 问题计数
-const selectedCount = ref<number>(0)
+const selectedCount = ref<number>(0) 
 
 // 问题计数处理
 const handleSelected = (value: number) => {
-  if (questions[selectedCount.value]) {
-    question.value = questions[++selectedCount.value]
+  ++selectedCount.value
+  if(questions[selectedCount.value]){
+    question.value = questions[selectedCount.value]
     enneagramItemPlusOne(value)
-  } else {
+  }else{
     // done
     isOpenQuestion.value = false
     enneagramData.value.push({
@@ -52,13 +53,11 @@ const handleSelected = (value: number) => {
   }
 }
 
-
 // 问题总数
 const totalQuestionCount = questions.length;
 
-
 // 问题进度
-const progressValue = computed(()=> (selectedCount.value / totalQuestionCount)  * 100);
+const progressValue = computed(()=> (selectedCount.value  / totalQuestionCount)  * 100);
 
 const loginIn = ()=>{
   // #TODO... 显示未登录，用户并不知道如何登录，建议点击时，弹窗登录，看你具体要不要这么做
