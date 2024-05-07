@@ -2,6 +2,8 @@
 import { Icon } from '@iconify/vue'
 
 const router = useRouter()
+const route = useRoute();
+
 </script>
 
 <template>
@@ -18,7 +20,7 @@ const router = useRouter()
     </div>
     <div
       @click="router.push('/helper')"
-      v-show="router.currentRoute.value.path !== '/helper'"
+      v-show="route.path !== '/helper'"
       class="absolute top-2 overflow-hidden right-2 rounded-full cursor-pointer"
     >
       <Icon icon="solar:danger-circle-bold" class="w-6 h-6 text-foreground" />

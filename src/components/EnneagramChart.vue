@@ -14,13 +14,13 @@ const props = defineProps<{
 
 const data = props.data
 
-const { tm } = useI18n()
+const { tm,rt } = useI18n()
 
 use([CanvasRenderer, RadarChart, LegendComponent, TooltipComponent])
 
 provide(THEME_KEY, 'auto')
 
-// @ts-ignore
+// @ts-ignore  https://github.com/intlify/vue-i18n-next/issues/1119
 const labels = [...tm('enneagram.labels')]
 
 const option = ref({
@@ -41,7 +41,7 @@ const option = ref({
     },
     indicator: labels.map((item) => {
       return {
-        name: item
+        name: rt(item)
       }
     })
   },
