@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { getCurrentLocale, transformI18n } from '@/plugins/i18n'
-import { getRoutes } from '@/router';
+import { getRoutes } from '@/router'
 
-import type { TypeItem } from '@/types/datasets';
+import type { TypeItem } from '@/types/datasets'
 
 import enTypeDesc from '@/dataset/en/typeDesc'
 
@@ -30,7 +30,9 @@ onMounted(() => {
 
 <template>
   <CardHeader>
-    <CardTitle>{{ transformI18n(getRoutes().find((item) => item.path === '/helper')?.meta?.title) }}</CardTitle>
+    <CardTitle>{{
+      transformI18n(getRoutes().find((item) => item.path === '/helper')?.meta?.title)
+    }}</CardTitle>
   </CardHeader>
   <CardContent>
     <Carousel>

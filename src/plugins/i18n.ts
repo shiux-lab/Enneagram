@@ -3,7 +3,6 @@ import type { App } from 'vue'
 
 import messages from '@intlify/unplugin-vue-i18n/messages'
 
-
 export const i18n = createI18n({
   legacy: false,
   locale: localStorage.lang ? localStorage.lang : 'zh',

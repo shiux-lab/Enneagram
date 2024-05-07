@@ -11,7 +11,10 @@ const { setIsLogin } = useUserStore()
 
 const formSchema = toTypedSchema(
   z.object({
-    username: z.string().min(2, transformI18n('form.username.min')).max(50, transformI18n('form.username.max'))
+    username: z
+      .string()
+      .min(2, transformI18n('form.username.min'))
+      .max(50, transformI18n('form.username.max'))
   })
 )
 

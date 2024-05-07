@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-import type { QuestionOption } from '@/types/datasets';
+import type { QuestionOption } from '@/types/datasets'
 
 defineProps<{
   question: QuestionOption[]

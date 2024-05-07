@@ -2,8 +2,8 @@
 definePage({
   name: 'about',
   meta: {
-    title: 'about.title',
-  },
+    title: 'about.title'
+  }
 })
 </script>
 

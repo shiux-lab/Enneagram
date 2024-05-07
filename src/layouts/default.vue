@@ -2,8 +2,7 @@
 import { Icon } from '@iconify/vue'
 
 const router = useRouter()
-const route = useRoute();
-
+const route = useRoute()
 </script>
 
 <template>

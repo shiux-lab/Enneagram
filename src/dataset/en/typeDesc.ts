@@ -1,7 +1,5 @@
-import type { TypeItem } from "@/types/datasets"
+import type { TypeItem } from '@/types/datasets'
 
-const typeDesc: TypeItem[] = [
-    
-]
+const typeDesc: TypeItem[] = []
 
 export default typeDesc

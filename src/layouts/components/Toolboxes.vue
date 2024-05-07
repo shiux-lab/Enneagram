@@ -3,7 +3,7 @@ import { useDark, useToggle } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { transformI18n } from '@/plugins/i18n'
 import { useUserStore } from '@/stores/user'
-import { storeToRefs } from 'pinia';
+import { storeToRefs } from 'pinia'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)

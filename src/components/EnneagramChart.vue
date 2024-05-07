@@ -14,7 +14,7 @@ const props = defineProps<{
 
 const data = props.data
 
-const { tm,rt } = useI18n()
+const { tm, rt } = useI18n()
 
 use([CanvasRenderer, RadarChart, LegendComponent, TooltipComponent])
 
