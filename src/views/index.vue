@@ -29,7 +29,7 @@ const enneagramData = ref<EnneagramData[]>([])
 // Reuse `form` section
 const isDesktop = useMediaQuery('(min-width: 768px)')
 
-const isOpen = computed(() => !isLogin)
+const isOpen = computed(() => !isLogin.value)
 
 const questionsI18n = createI18n({
   legacy: false,
@@ -72,8 +72,6 @@ const handleSelected = (value: number) => {
     enneagramItemPlusOne(value)
   }
 }
-
-
 
 // 问题进度
 const progressValue = computed(() => (selectedCount.value / totalQuestionCount.value) * 100)

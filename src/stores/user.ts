@@ -15,6 +15,9 @@ export const useUserStore = defineStore('user', {
   getters: {
     getUser(): string | null {
       return this.user
+    },
+    getIsOpen(): boolean {
+      return !this.isLogin
     }
   },
   actions: {

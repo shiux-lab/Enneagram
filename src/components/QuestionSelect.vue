@@ -2,12 +2,10 @@
 import { Button } from '@/components/ui/button'
 import type { QuestionOption } from '@/types/datasets';
 
-const props = defineProps<{
+defineProps<{
   question: QuestionOption[]
   disabled?: boolean
 }>()
-
-console.log(props.question)
 </script>
 
 <template>
