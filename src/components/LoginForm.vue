@@ -2,21 +2,16 @@
 import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import * as z from 'zod'
-import { useI18n } from 'vue-i18n'
-import { Button } from '@/components/ui/button'
-import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
+import { FormField } from '@/components/ui/form'
+import { transformI18n } from '@/plugins/i18n'
 
 import { useUserStore } from '@/stores/user'
-
-const { t } = useI18n()
-
 
 const { setIsLogin } = useUserStore()
 
 const formSchema = toTypedSchema(
   z.object({
-    username: z.string().min(2,t('form.username.min')).max(50,t('form.username.max'))
+    username: z.string().min(2, transformI18n('form.username.min')).max(50, transformI18n('form.username.max'))
   })
 )
 
@@ -34,18 +29,18 @@ const onSubmit = form.handleSubmit(() => {
   <form @submit="onSubmit" class="grid items-start gap-4 px-4">
     <FormField v-slot="{ componentField }" name="username">
       <FormItem>
-        <FormLabel>{{ $t('form.username.label') }}</FormLabel>
+        <FormLabel>{{ transformI18n('form.username.label') }}</FormLabel>
         <FormControl>
           <Input
             type="text"
-            :placeholder="$t('form.username.placeholder')"
+            :placeholder="transformI18n('form.username.placeholder')"
             v-bind="componentField"
           />
         </FormControl>
         <FormMessage />
       </FormItem>
     </FormField>
-    <Button type="submit">{{ $t('form.submit') }}</Button>
+    <Button type="submit">{{ transformI18n('form.submit') }}</Button>
   </form>
 </template>
 

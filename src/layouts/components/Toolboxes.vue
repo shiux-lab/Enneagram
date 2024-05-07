@@ -3,6 +3,7 @@ import { useDark, useToggle } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import { transformI18n } from '@/plugins/i18n'
 import { useUserStore } from '@/stores/user'
+import { storeToRefs } from 'pinia';
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
@@ -11,7 +12,7 @@ const toggleDarkMode = () => {
   toggleDark()
 }
 
-const { getIsOpen } = useUserStore()
+const { getIsOpen } = storeToRefs(useUserStore())
 
 const { locale } = useI18n()
 
@@ -25,7 +26,7 @@ const switchLocale = () => {
 </script>
 
 <template>
-  <Popover default-open v-model:open="getIsOpen">
+  <Popover default-open v-model="getIsOpen">
     <PopoverTrigger as-child>
       <Toolbox y="top-10" icon="streamline:login-1-solid" />
     </PopoverTrigger>

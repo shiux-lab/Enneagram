@@ -20,9 +20,7 @@ definePage({
 
 const userStore = useUserStore()
 
-const { getIsOpen } = userStore
-
-const { user, enneagram } = storeToRefs(userStore)
+const { user, enneagram, getIsOpen } = storeToRefs(userStore)
 
 const { enneagramItemPlusOne } = userStore
 
