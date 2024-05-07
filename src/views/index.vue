@@ -20,7 +20,9 @@ definePage({
 
 const userStore = useUserStore()
 
-const { isLogin, user, enneagram } = storeToRefs(userStore)
+const { getIsOpen } = userStore
+
+const { user, enneagram } = storeToRefs(userStore)
 
 const { enneagramItemPlusOne } = userStore
 
@@ -28,8 +30,6 @@ const enneagramData = ref<EnneagramData[]>([])
 
 // Reuse `form` section
 const isDesktop = useMediaQuery('(min-width: 768px)')
-
-const isOpen = computed(() => !isLogin.value)
 
 const questionsI18n = createI18n({
   legacy: false,
@@ -90,7 +90,7 @@ const loginIn = () => {
       <span class="text-lg text-foreground">{{ user || '' }}</span>
       {{ transformI18n('timeout') }}
       <p class="text-foreground">{{ transformI18n('description') }}</p>
-      <p class="text-lg text-destructive underline" @click="loginIn" v-show="isOpen">
+      <p class="text-lg text-destructive underline" @click="loginIn" v-show="getIsOpen">
         {{ transformI18n('form.waning') }}
       </p>
     </CardDescription>
@@ -98,7 +98,7 @@ const loginIn = () => {
   <CardContent>
     <QuestionSelect
       v-show="isOpenQuestion"
-      :disabled="isOpen"
+      :disabled="getIsOpen"
       :question="question"
       @selected="handleSelected"
     />
