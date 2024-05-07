@@ -18,7 +18,6 @@ form:
     label: User
     placeholder: Please enter your username
     min: Username must contain at least 2 character(s)
-  waning: Not Login
 login: Login
 title: Enneagram Test
 description: What you feel trumps everything

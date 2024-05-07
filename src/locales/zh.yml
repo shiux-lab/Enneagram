@@ -19,7 +19,6 @@ form:
     placeholder: 请输入用户名,
     min: 用户名必须至少包含2个字符
     max: 用户名无法超过50个字符
-  waning: 未登录
 login: 登录
 title: 九型人格测试
 description: 你的感觉胜于一切

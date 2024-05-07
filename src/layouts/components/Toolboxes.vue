@@ -26,7 +26,7 @@ const switchLocale = () => {
 </script>
 
 <template>
-  <Popover default-open v-model="getIsOpen">
+  <Popover default-open v-model:open="getIsOpen">
     <PopoverTrigger as-child>
       <Toolbox y="top-10" icon="streamline:login-1-solid" />
     </PopoverTrigger>

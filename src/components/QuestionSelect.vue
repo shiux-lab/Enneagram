@@ -10,11 +10,10 @@ defineProps<{
 
 <template>
   <div class="grid gap-4">
-    <!-- :variant="!key ? 'default' : 'outline'"  我认为不该让第一个默认默认选中，会影响用户的选择，不该默认有选中样式-->
     <Button
       :disabled="disabled"
       class="flex justify-evenly whitespace-normal h-auto"
-      :variant="!key ? 'default' : 'outline'"
+      variant="outline"
       v-for="(item, key) in question"
       :value="item.value"
       :key="key"
