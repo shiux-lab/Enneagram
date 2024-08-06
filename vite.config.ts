@@ -15,10 +15,7 @@ import VueRouter from "unplugin-vue-router/vite"
 export default defineConfig({
   css: {
     postcss: {
-      plugins: [
-        tailwind(),
-        autoprefixer()
-      ],
+      plugins: [tailwind(), autoprefixer()],
     },
   },
   plugins: [
@@ -40,10 +37,7 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        VueRouterAutoImports,
-        {
-          'vue-router/auto': ['useRouter', 'useRoute']
-        }
+        VueRouterAutoImports
       ],
       dts: 'src/auto-imports.d.ts',
       eslintrc: {
