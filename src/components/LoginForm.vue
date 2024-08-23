@@ -32,13 +32,9 @@ const onSubmit = form.handleSubmit(() => {
   <form @submit="onSubmit" class="grid items-start gap-4 px-4">
     <FormField v-slot="{ componentField }" name="username">
       <FormItem>
-        <FormLabel>{{ transformI18n('form.username.label') }}</FormLabel>
+        <FormLabel>{{ $t('form.username.label') }}</FormLabel>
         <FormControl>
-          <Input
-            type="text"
-            :placeholder="transformI18n('form.username.placeholder')"
-            v-bind="componentField"
-          />
+          <Input type="text" :placeholder="transformI18n('form.username.placeholder')" v-bind="componentField" />
         </FormControl>
         <FormMessage />
       </FormItem>
@@ -46,5 +42,3 @@ const onSubmit = form.handleSubmit(() => {
     <Button type="submit">{{ transformI18n('form.submit') }}</Button>
   </form>
 </template>
-
-<style scoped></style>

@@ -15,5 +15,3 @@ defineProps<{
     <Icon :icon="icon" class="w-4 h-4 text-background absolute top-1/2 right-2 -translate-y-1/2" />
   </div>
 </template>
-
-<style scoped></style>

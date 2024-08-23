@@ -66,5 +66,3 @@ const option = ref({
 <template>
   <VChart :option="option" class="h-[20rem] w-11/12 mx-auto" />
 </template>
-
-<style scoped></style>
