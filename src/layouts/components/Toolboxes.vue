@@ -12,7 +12,8 @@ const toggleDarkMode = () => {
   toggleDark()
 }
 
-const { getIsOpen } = storeToRefs(useUserStore())
+const userStore = useUserStore()
+const { getIsOpen } = storeToRefs(userStore)
 
 const { locale } = useI18n()
 
@@ -26,7 +27,7 @@ const switchLocale = () => {
 </script>
 
 <template>
-  <Popover default-open v-model:open="getIsOpen">
+  <Popover default-open :open="getIsOpen">
     <PopoverTrigger as-child>
       <Toolbox y="top-10" icon="streamline:login-1-solid" />
     </PopoverTrigger>

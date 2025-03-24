@@ -34,7 +34,11 @@ const onSubmit = form.handleSubmit(() => {
       <FormItem>
         <FormLabel>{{ $t('form.username.label') }}</FormLabel>
         <FormControl>
-          <Input type="text" :placeholder="transformI18n('form.username.placeholder')" v-bind="componentField" />
+          <Input
+            type="text"
+            :placeholder="transformI18n('form.username.placeholder')"
+            v-bind="componentField"
+          />
         </FormControl>
         <FormMessage />
       </FormItem>
